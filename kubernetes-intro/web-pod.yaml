@@ -6,7 +6,7 @@ metadata:
     app: web
 spec:
   containers:
-  - name: web-container
+  - name: web
     image: ssi91/otus-hw-nginx:v0.3
     ports:
     - name: http
