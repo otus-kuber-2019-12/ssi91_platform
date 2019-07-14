@@ -7,14 +7,14 @@ metadata:
 spec:
   containers:
   - name: web-container
-    image: ssi91/otus-hw-nginx:v0.2
+    image: ssi91/otus-hw-nginx:v0.3
     ports:
     - name: http
       containerPort: 8000
       protocol: TCP
     volumeMounts:
     - name: app
-      mountPath: /usr/src/app
+      mountPath: /app
   initContainers:
   - name: generate-intex-page
     image: busybox:1.31.0
