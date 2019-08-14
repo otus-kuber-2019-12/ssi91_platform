@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 subjects:
   - kind: ServiceAccount
-    name: jane
+    name: ken
     apiGroup: ""
     namespace: dev
 roleRef:
