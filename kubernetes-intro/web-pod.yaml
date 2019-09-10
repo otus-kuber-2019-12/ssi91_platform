@@ -15,6 +15,15 @@ spec:
     volumeMounts:
     - name: app
       mountPath: /app
+    # --- BEGIN ---
+    readinessProbe:
+      httpGet: 
+        path: /intex.html
+        port: 80
+    livenessProbe:
+      tcpSocket:
+        port: 8000
+    # --- END ---
   initContainers:
   - name: generate-intex-page
     image: busybox:1.31.0
