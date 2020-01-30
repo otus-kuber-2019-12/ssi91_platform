@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 subjects:
 - kind: ServiceAccount
-  name: jave
+  name: jane
   namespace: dev
 roleRef:
   kind: ClusterRole
