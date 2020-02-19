@@ -48,3 +48,8 @@ ssi91 Platform repository
 * Создан манифест nginx-lb.yaml
 * Создан web-svc-headless.yaml
 * Создан web-ingress.yaml - манифест Ingress'а, направляющий на Service `web-svc`, определённый в web-svc-headless.yaml
+
+## HW №5
+* Применён манифест с minio, который создаёт StatefulSet, PV, PVC
+* Применён манифест minio-headless-service.yml
+* Создан Secret c необходимыми для работы minio данными
