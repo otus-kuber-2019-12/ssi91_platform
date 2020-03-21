@@ -59,3 +59,22 @@ ssi91 Platform repository
 * Создан mysql-operator, обрабатывающий события создания удаления ресурса `MySQL`
 * ```Вопрос: почему объект создался, хотя мы создали CR, до того, как запустили контроллер?```
 Kopf при запуске проверяет объекты нужных ему ресорсов и сверяет их состояние(https://kopf.readthedocs.io/en/latest/continuity/#downtime)
+
+```
+$ kubectl get jobs
+NAME                         COMPLETIONS   DURATION   AGE
+backup-mysql-instance-job    1/1           1s         38m
+restore-mysql-instance-job   1/1           42s        36m
+```
+
+```
+$ export MYSQLPOD=$(kubectl get pods -l app=mysql-instance -o jsonpath="{.items[*].metadata.name}")
+$ kubectl exec -it $MYSQLPOD -- mysql -potuspassword -e "select * from test;" otus-database
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+-------------+
+| id | name        |
++----+-------------+
+|  1 | some data   |
+|  2 | some data-2 |
++----+-------------+
+```
