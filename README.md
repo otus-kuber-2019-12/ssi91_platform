@@ -57,7 +57,5 @@ ssi91 Platform repository
 ## HW №7
 * Созданы Custom Resource `MySQL` и его CustomResourceDefinition
 * Создан mysql-operator, обрабатывающий события создания удаления ресурса `MySQL`
-* ```
-Вопрос: почему объект создался, хотя мы создали CR, до того, как запустили контроллер?
-```
+* ```Вопрос: почему объект создался, хотя мы создали CR, до того, как запустили контроллер?```
 Kopf при запуске проверяет объекты нужных ему ресорсов и сверяет их состояние(https://kopf.readthedocs.io/en/latest/continuity/#downtime)
