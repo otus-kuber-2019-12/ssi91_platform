@@ -1,0 +1,13 @@
+kind: PersistentVolume
+metadata:
+  name: {{ name }}-pv
+  labels:
+    pv-usage: {{ name }}
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: {{ storage_size }}
+  hostPath:
+    path: /data/{{ name }}-pv/
